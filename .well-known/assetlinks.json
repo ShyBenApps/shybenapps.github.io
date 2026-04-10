@@ -5,9 +5,10 @@
     ],
     "target": {
       "namespace": "android_app",
-      "package_name": "YOUR_ANDROID_PACKAGE_NAME",
+      "package_name": "com.shyben.pikori",
       "sha256_cert_fingerprints": [
-        "YOUR_RELEASE_SHA256_FINGERPRINT"
+        "DEBUG_SHA256_HERE",
+        "RELEASE_SHA256_HERE"
       ]
     }
   }
