@@ -4,16 +4,16 @@
   <meta charset="utf-8" />
   <title>Pikori</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="theme-color" content="#111111" />
+  <meta name="theme-color" content="#14C8C4" />
   <style>
     :root {
-      --bg: #0f1115;
-      --card: #171a21;
-      --text: #f5f7fb;
-      --muted: #a7b0c0;
-      --primary: #7c5cff;
-      --primary-pressed: #6847f0;
-      --border: #2a3040;
+      --bg: #0d1113;
+      --card: #151b1d;
+      --text: #f4fbfb;
+      --muted: #a8b7b7;
+      --primary: #14c8c4;
+      --primary-soft: rgba(20, 200, 196, 0.14);
+      --border: #243033;
     }
 
     * {
@@ -23,7 +23,7 @@
     body {
       margin: 0;
       font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      background: radial-gradient(circle at top, #1a1f2b 0%, var(--bg) 55%);
+      background: radial-gradient(circle at top, #162225 0%, var(--bg) 58%);
       color: var(--text);
       min-height: 100vh;
       display: flex;
@@ -34,24 +34,24 @@
 
     .card {
       width: 100%;
-      max-width: 520px;
-      background: rgba(23, 26, 33, 0.96);
+      max-width: 560px;
+      background: rgba(21, 27, 29, 0.96);
       border: 1px solid var(--border);
       border-radius: 28px;
       padding: 28px;
       box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+      text-align: center;
     }
 
-    .logo {
-      width: 72px;
-      height: 72px;
-      border-radius: 20px;
-      background: linear-gradient(135deg, var(--primary), #9a84ff);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 30px;
-      margin-bottom: 18px;
+    .app-icon {
+      width: 88px;
+      height: 88px;
+      border-radius: 22px;
+      object-fit: cover;
+      display: block;
+      margin: 0 auto 18px;
+      box-shadow: 0 10px 30px rgba(20, 200, 196, 0.18);
+      background: var(--primary-soft);
     }
 
     h1 {
@@ -60,15 +60,11 @@
       line-height: 1.1;
     }
 
-    p {
+    .subtitle {
       margin: 0;
       color: var(--muted);
       line-height: 1.5;
       font-size: 15px;
-    }
-
-    .spacer {
-      height: 22px;
     }
 
     .submission-box {
@@ -76,7 +72,8 @@
       border: 1px solid var(--border);
       border-radius: 18px;
       padding: 14px 16px;
-      margin-top: 18px;
+      margin-top: 20px;
+      text-align: left;
     }
 
     .submission-label {
@@ -93,67 +90,27 @@
       word-break: break-word;
     }
 
-    .actions {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
+    .install-note {
       margin-top: 22px;
-    }
-
-    .button {
-      width: 100%;
-      border: none;
-      border-radius: 16px;
-      padding: 15px 18px;
-      font-size: 15px;
-      font-weight: 700;
-      cursor: pointer;
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      transition: transform 0.08s ease, opacity 0.15s ease, background 0.15s ease;
-    }
-
-    .button:active {
-      transform: scale(0.99);
-    }
-
-    .button-primary {
-      background: var(--primary);
-      color: white;
-    }
-
-    .button-primary:hover {
-      background: var(--primary-pressed);
-    }
-
-    .button-secondary {
-      background: transparent;
+      padding: 18px 18px;
+      border-radius: 18px;
+      background: var(--primary-soft);
+      border: 1px solid rgba(20, 200, 196, 0.22);
       color: var(--text);
-      border: 1px solid var(--border);
+      font-size: 16px;
+      line-height: 1.55;
+      font-weight: 600;
     }
 
-    .button-secondary:hover {
-      background: rgba(255, 255, 255, 0.04);
+    .install-note strong {
+      color: var(--primary);
     }
 
     .small-note {
       margin-top: 16px;
-      font-size: 13px;
-      color: var(--muted);
-    }
-
-    .footer-link {
-      display: inline-block;
-      margin-top: 18px;
-      color: #c8d0ff;
-      text-decoration: none;
       font-size: 14px;
-    }
-
-    .footer-link:hover {
-      text-decoration: underline;
+      color: var(--muted);
+      line-height: 1.5;
     }
 
     .hidden {
@@ -169,17 +126,25 @@
       h1 {
         font-size: 26px;
       }
+
+      .install-note {
+        font-size: 15px;
+      }
     }
   </style>
 </head>
 <body>
   <main class="card">
-    <div class="logo">P</div>
-
     <div id="submission-view" class="hidden">
+      <img
+        class="app-icon"
+        src="/assets/pikori-icon.png"
+        alt="Pikori"
+      />
+
       <h1>Open in Pikori</h1>
-      <p>
-        This Pikori submission is best viewed in the app.
+      <p class="subtitle">
+        This Pikori submission is meant to be opened in the app.
       </p>
 
       <div class="submission-box">
@@ -187,43 +152,27 @@
         <div id="submission-id" class="submission-id">...</div>
       </div>
 
-      <div class="actions">
-        <a id="open-app-button" class="button button-primary" href="#">
-          Open Pikori
-        </a>
-
-        <a
-          id="store-button"
-          class="button button-secondary"
-          href="https://shybenapps.github.io/pikori-legal/"
-        >
-          Learn more about Pikori
-        </a>
+      <div class="install-note">
+        This link can only be fully opened with the installed <strong>Pikori</strong> app.<br />
+        If Pikori is not installed on your device yet, please download it from the app store.
       </div>
 
       <p class="small-note">
-        If the app does not open, you can come back here later once Pikori is installed.
+        Once Pikori is installed, opening this link again should take you directly into the app.
       </p>
-
-      <a class="footer-link" href="https://shybenapps.github.io/pikori-legal/">
-        Open website
-      </a>
     </div>
 
     <div id="generic-404-view" class="hidden">
+      <img
+        class="app-icon"
+        src="/assets/pikori-icon.png"
+        alt="Pikori"
+      />
+
       <h1>Page not found</h1>
-      <p>
+      <p class="subtitle">
         The page you opened does not exist.
       </p>
-
-      <div class="actions">
-        <a
-          class="button button-primary"
-          href="https://shybenapps.github.io/pikori-legal/"
-        >
-          Go to Pikori site
-        </a>
-      </div>
     </div>
   </main>
 
@@ -235,7 +184,6 @@
       const submissionView = document.getElementById("submission-view");
       const generic404View = document.getElementById("generic-404-view");
       const submissionIdText = document.getElementById("submission-id");
-      const openAppButton = document.getElementById("open-app-button");
 
       const isSubmissionLink = parts.length === 2 && parts[0] === "s" && parts[1];
 
@@ -247,22 +195,11 @@
       const submissionId = decodeURIComponent(parts[1]);
       submissionIdText.textContent = submissionId;
 
-      // This should match what your Flutter app already understands.
-      // Your app currently routes based on /s/<id> links, so we keep the web URL.
-      const universalLink = window.location.origin + "/s/" + encodeURIComponent(submissionId);
-
-      // Optional custom-scheme fallback.
-      // Only useful if you later add handling for this exact route in-app.
-      const customSchemeLink = "pikori://submission/" + encodeURIComponent(submissionId);
-
-      openAppButton.href = universalLink;
       submissionView.classList.remove("hidden");
 
-      // Optional attempt to open the custom scheme shortly after page load.
-      // Comment this out if you don't want the auto-attempt.
+      const customSchemeLink = "pikori://submission/" + encodeURIComponent(submissionId);
+
       setTimeout(function () {
-        // This only helps in some mobile browser situations.
-        // Universal/app links are still the main path.
         const iframe = document.createElement("iframe");
         iframe.style.display = "none";
         iframe.src = customSchemeLink;
@@ -271,7 +208,7 @@
         setTimeout(function () {
           iframe.remove();
         }, 1500);
-      }, 300);
+      }, 250);
     })();
   </script>
 </body>
