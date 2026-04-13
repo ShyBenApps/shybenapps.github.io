@@ -7,8 +7,8 @@
       "namespace": "android_app",
       "package_name": "com.shyben.pikori",
       "sha256_cert_fingerprints": [
-        "DEBUG_SHA256_HERE",
-        "RELEASE_SHA256_HERE"
+        "49:8E:0B:1A:A5:7D:7A:7B:96:3B:88:DC:BA:35:49:11:80:1F:B4:94:50:BA:57:9D:30:98:F6:72:FA:2D:1B:E1",
+        "0F:39:74:6F:AF:93:0D:B6:52:60:33:D3:0D:3C:15:45:96:26:A8:BA:E8:55:37:B8:34:D7:5D:CB:E3:2C:9C:05"
       ]
     }
   }
