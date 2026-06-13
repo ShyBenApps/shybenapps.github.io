@@ -1,5 +1,4 @@
 <!doctype html>
-
 <html lang="en">
 <head>
   <meta charset="utf-8" />
@@ -57,7 +56,7 @@
 
     .page {
       width: 100%;
-      max-width: 860px;
+      max-width: 900px;
     }
 
     .hero {
@@ -116,7 +115,7 @@
 
     .tagline {
       margin: 22px 0 0;
-      max-width: 620px;
+      max-width: 660px;
       color: var(--muted);
       font-size: 18px;
       line-height: 1.58;
@@ -142,7 +141,6 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 10px;
       min-height: 48px;
       padding: 0 18px;
       border-radius: 999px;
@@ -213,12 +211,17 @@
       color: rgba(168, 183, 183, 0.82);
       font-size: 13px;
       text-align: center;
-      line-height: 1.5;
+      line-height: 1.6;
     }
 
     .footer a {
       color: var(--primary);
       font-weight: 700;
+    }
+
+    .footer span {
+      color: rgba(168, 183, 183, 0.55);
+      margin: 0 6px;
     }
 
     @media (max-width: 760px) {
@@ -256,7 +259,6 @@
       }
     }
   </style>
-
 </head>
 
 <body>
@@ -266,63 +268,70 @@
         <img
           class="app-icon"
           src="/assets/pikori_icon.png"
-          alt="Pikori app icon"/>
+          alt="Pikori app icon"
+        />
 
-    <div>
-      <p class="eyebrow">ShyBen Apps</p>
-      <h1 id="title">Pikori</h1>
-    </div>
-  </div>
+        <div>
+          <p class="eyebrow">ShyBen Apps</p>
+          <h1 id="title">Pikori</h1>
+        </div>
+      </div>
 
-  <p class="tagline">
-    <strong>Post. Vote. Win. Daily.</strong><br />
-    Pikori is a daily creative challenge app where people submit photos or videos,
-    vote in head-to-head battles, climb leaderboards, and discover creative posts from the community.
-  </p>
-
-  <div class="actions" aria-label="Important links">
-    <a class="button button-primary" href="/pikori-legal/">
-      Legal documents
-    </a>
-
-    <a class="button button-secondary" href="/app-ads.txt">
-      app-ads.txt
-    </a>
-  </div>
-
-  <div class="grid">
-    <article class="info-card">
-      <h2>Legal texts</h2>
-      <p>
-        Privacy Policy, Terms of Service, safety information, and other legal documents for Pikori.
+      <p class="tagline">
+        <strong>Post. Vote. Win. Daily.</strong><br />
+        Pikori is a daily creative challenge app where people submit photos or videos,
+        vote in head-to-head battles, climb leaderboards, and discover creative posts from the community.
       </p>
-    </article>
 
-    <article class="info-card">
-      <h2>App verification</h2>
-      <p>
-        This domain is used for official app verification files, including AdMob app-ads.txt.
-      </p>
-    </article>
+      <div class="actions" aria-label="Important links">
+        <a class="button button-primary" href="/pikori-legal/">
+          Legal documents
+        </a>
 
-    <article class="info-card">
-      <h2>Shared links</h2>
-      <p>
-        Pikori links may open app content directly when the app is installed on your device.
-      </p>
-    </article>
-  </div>
-</section>
+        <a class="button button-secondary" href="/impressum.html">
+          Impressum / Legal Notice
+        </a>
 
-<footer class="footer">
-  © <span id="year"></span> ShyBen Apps · Official Pikori link hub
-</footer>
+        <a class="button button-secondary" href="/app-ads.txt">
+          app-ads.txt
+        </a>
+      </div>
 
+      <div class="grid">
+        <article class="info-card">
+          <h2>Legal texts</h2>
+          <p>
+            Privacy Policy, Terms of Service, safety information, and other legal documents for Pikori.
+          </p>
+        </article>
+
+        <article class="info-card">
+          <h2>App verification</h2>
+          <p>
+            This domain is used for official app verification files, including AdMob app-ads.txt.
+          </p>
+        </article>
+
+        <article class="info-card">
+          <h2>Shared links</h2>
+          <p>
+            Pikori links may open app content directly when the app is installed on your device.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <footer class="footer">
+      © <span id="year"></span> ShyBen Apps
+      <span>·</span>
+      <a href="/impressum.html">Impressum / Legal Notice</a>
+      <span>·</span>
+      <a href="/pikori-legal/">Legal documents</a>
+    </footer>
   </main>
 
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
   </script>
-
 </body>
 </html>
