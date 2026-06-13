@@ -1,12 +1,331 @@
 <!doctype html>
+
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Pikori Links</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Pikori · ShyBen Apps</title>
+  <meta
+    name="description"
+    content="Official links, legal documents, and app verification files for Pikori by ShyBen Apps."
+  />
+  <meta name="theme-color" content="#14C8C4" />
+
+  <style>
+    :root {
+      --bg: #0d1113;
+      --card: #151b1d;
+      --card-soft: rgba(255, 255, 255, 0.035);
+      --text: #f4fbfb;
+      --muted: #a8b7b7;
+      --primary: #14c8c4;
+      --primary-strong: #47f0ec;
+      --primary-soft: rgba(20, 200, 196, 0.14);
+      --border: #243033;
+      --shadow: rgba(0, 0, 0, 0.36);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      min-height: 100%;
+      background: var(--bg);
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(20, 200, 196, 0.22) 0%, transparent 34%),
+        radial-gradient(circle at bottom right, rgba(20, 200, 196, 0.10) 0%, transparent 32%),
+        linear-gradient(180deg, #101719 0%, var(--bg) 62%);
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 28px;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .page {
+      width: 100%;
+      max-width: 860px;
+    }
+
+    .hero {
+      background: rgba(21, 27, 29, 0.94);
+      border: 1px solid var(--border);
+      border-radius: 32px;
+      box-shadow: 0 24px 80px var(--shadow);
+      padding: 34px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: -120px -120px auto auto;
+      width: 260px;
+      height: 260px;
+      background: radial-gradient(circle, rgba(20, 200, 196, 0.22), transparent 64%);
+      pointer-events: none;
+    }
+
+    .top {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .app-icon {
+      width: 86px;
+      height: 86px;
+      border-radius: 22px;
+      object-fit: cover;
+      flex: 0 0 auto;
+      background: var(--primary-soft);
+      box-shadow: 0 12px 34px rgba(20, 200, 196, 0.20);
+    }
+
+    .eyebrow {
+      margin: 0 0 6px;
+      color: var(--primary);
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 0.11em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(34px, 6vw, 56px);
+      line-height: 0.96;
+      letter-spacing: -0.045em;
+    }
+
+    .tagline {
+      margin: 22px 0 0;
+      max-width: 620px;
+      color: var(--muted);
+      font-size: 18px;
+      line-height: 1.58;
+      position: relative;
+      z-index: 1;
+    }
+
+    .tagline strong {
+      color: var(--text);
+      font-weight: 800;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 28px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      min-height: 48px;
+      padding: 0 18px;
+      border-radius: 999px;
+      font-weight: 800;
+      font-size: 15px;
+      transition: transform 160ms ease, border-color 160ms ease, background 160ms ease;
+    }
+
+    .button:hover {
+      transform: translateY(-1px);
+    }
+
+    .button-primary {
+      color: #061111;
+      background: var(--primary);
+      border: 1px solid var(--primary);
+      box-shadow: 0 10px 28px rgba(20, 200, 196, 0.20);
+    }
+
+    .button-primary:hover {
+      background: var(--primary-strong);
+      border-color: var(--primary-strong);
+    }
+
+    .button-secondary {
+      color: var(--text);
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid var(--border);
+    }
+
+    .button-secondary:hover {
+      border-color: rgba(20, 200, 196, 0.45);
+      background: rgba(20, 200, 196, 0.08);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin-top: 24px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .info-card {
+      background: var(--card-soft);
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      padding: 18px;
+      min-height: 142px;
+    }
+
+    .info-card h2 {
+      margin: 0 0 8px;
+      font-size: 17px;
+      letter-spacing: -0.01em;
+    }
+
+    .info-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.55;
+    }
+
+    .footer {
+      margin-top: 18px;
+      color: rgba(168, 183, 183, 0.82);
+      font-size: 13px;
+      text-align: center;
+      line-height: 1.5;
+    }
+
+    .footer a {
+      color: var(--primary);
+      font-weight: 700;
+    }
+
+    @media (max-width: 760px) {
+      body {
+        padding: 18px;
+        align-items: flex-start;
+      }
+
+      .hero {
+        padding: 24px;
+        border-radius: 28px;
+      }
+
+      .top {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .app-icon {
+        width: 78px;
+        height: 78px;
+        border-radius: 20px;
+      }
+
+      .tagline {
+        font-size: 16px;
+      }
+
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      .button {
+        width: 100%;
+      }
+    }
+  </style>
+
 </head>
+
 <body>
-  <h1>Pikori Links</h1>
-  <p>This site is used for Pikori shared links and app verification files.</p>
+  <main class="page">
+    <section class="hero" aria-labelledby="title">
+      <div class="top">
+        <img
+          class="app-icon"
+          src="/assets/pikori_icon.png"
+          alt="Pikori app icon"
+        />
+
+```
+    <div>
+      <p class="eyebrow">ShyBen Apps</p>
+      <h1 id="title">Pikori</h1>
+    </div>
+  </div>
+
+  <p class="tagline">
+    <strong>Post. Vote. Win. Daily.</strong><br />
+    Pikori is a daily creative challenge app where people submit photos or videos,
+    vote in head-to-head battles, climb leaderboards, and discover creative posts from the community.
+  </p>
+
+  <div class="actions" aria-label="Important links">
+    <a class="button button-primary" href="/pikori-legal/">
+      Legal documents
+    </a>
+
+    <a class="button button-secondary" href="/app-ads.txt">
+      app-ads.txt
+    </a>
+  </div>
+
+  <div class="grid">
+    <article class="info-card">
+      <h2>Legal texts</h2>
+      <p>
+        Privacy Policy, Terms of Service, safety information, and other legal documents for Pikori.
+      </p>
+    </article>
+
+    <article class="info-card">
+      <h2>App verification</h2>
+      <p>
+        This domain is used for official app verification files, including AdMob app-ads.txt.
+      </p>
+    </article>
+
+    <article class="info-card">
+      <h2>Shared links</h2>
+      <p>
+        Pikori links may open app content directly when the app is installed on your device.
+      </p>
+    </article>
+  </div>
+</section>
+
+<footer class="footer">
+  © <span id="year"></span> ShyBen Apps · Official Pikori link hub
+</footer>
+```
+
+  </main>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+
 </body>
 </html>
