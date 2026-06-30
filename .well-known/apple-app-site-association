@@ -1,0 +1,16 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": [
+          "GRUS2KGS9N.com.shyben.pikori"
+        ],
+        "components": [
+          {
+            "/": "/s/*"
+          }
+        ]
+      }
+    ]
+  }
+}
